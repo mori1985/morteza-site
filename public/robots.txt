@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://mortezamahmoudi.dev
+
+# Sitemaps
+Sitemap: https://mortezamahmoudi.dev/sitemap.xml
