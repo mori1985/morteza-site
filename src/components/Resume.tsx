@@ -81,7 +81,9 @@ const skills = [
   { name: "Material UI", level: 80 },
   { name: "شبکه (سیسکو و میکروتیک)", level: 85 },
   { name: "REST API", level: 80 },
+  { name: "آنلاین کردن پروژه و تنظیمات سرور (PM2، Vercel و ...)", level: 80 },  // اضافه شده
 ];
+
 
 const languages = [
   { name: "فارسی", level: 100 },
