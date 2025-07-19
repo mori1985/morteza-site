@@ -13,10 +13,17 @@ import {
   createTheme,
   useMediaQuery,
 } from "@mui/material";
+
 import WorkIcon from "@mui/icons-material/Work";
 import SchoolIcon from "@mui/icons-material/School";
 import LanguageIcon from "@mui/icons-material/Language";
 import CodeIcon from "@mui/icons-material/Code";
+import StorageIcon from "@mui/icons-material/Storage";
+import CloudIcon from "@mui/icons-material/Cloud";
+import SettingsRemoteIcon from "@mui/icons-material/SettingsRemote";
+import SecurityIcon from "@mui/icons-material/Security";
+import WifiIcon from "@mui/icons-material/Wifi";
+
 import "@fontsource/vazirmatn";
 
 const theme = createTheme({
@@ -72,22 +79,61 @@ const education = [
 ];
 
 const skills = [
-  { name: "React", level: 90 },
-  { name: "NestJS", level: 85 },
-  { name: "PostgreSQL", level: 75 },
-  { name: "MongoDB", level: 70 },
-  { name: "TypeScript", level: 85 },
-  { name: "Tailwind CSS", level: 75 },
-  { name: "Material UI", level: 80 },
-  { name: "شبکه (سیسکو و میکروتیک)", level: 85 },
-  { name: "REST API", level: 80 },
-  { name: "آنلاین کردن پروژه و تنظیمات سرور (PM2، Vercel و ...)", level: 80 },  // اضافه شده
+  {
+    name: "React",
+    level: 90,
+    icon: <CodeIcon color="primary" />,
+  },
+  {
+    name: "NestJS",
+    level: 85,
+    icon: <CodeIcon color="secondary" />,
+  },
+  {
+    name: "PostgreSQL",
+    level: 75,
+    icon: <StorageIcon color="primary" />,
+  },
+  {
+    name: "MongoDB",
+    level: 70,
+    icon: <StorageIcon color="success" />,
+  },
+  {
+    name: "TypeScript",
+    level: 85,
+    icon: <CodeIcon color="info" />,
+  },
+  {
+    name: "Tailwind CSS",
+    level: 75,
+    icon: <CodeIcon color="primary" />,
+  },
+  {
+    name: "Material UI",
+    level: 80,
+    icon: <CodeIcon color="secondary" />,
+  },
+  {
+    name: "شبکه (سیسکو و میکروتیک)",
+    level: 85,
+    icon: <WifiIcon color="action" />,
+  },
+  {
+    name: "REST API",
+    level: 80,
+    icon: <CloudIcon color="disabled" />,
+  },
+  {
+    name: "آنلاین کردن پروژه و تنظیمات سرور (PM2، Vercel و ...)",
+    level: 80,
+    icon: <SettingsRemoteIcon color="primary" />,
+  },
 ];
 
-
 const languages = [
-  { name: "فارسی", level: 100 },
-  { name: "انگلیسی", level: 70 },
+  { name: "فارسی", level: 100, icon: <LanguageIcon color="primary" /> },
+  { name: "انگلیسی", level: 70, icon: <LanguageIcon color="action" /> },
 ];
 
 const ColoredLinearProgress = ({ value }: { value: number }) => (
@@ -115,11 +161,16 @@ export default function ResumePage() {
       <Container maxWidth="md" sx={{ py: 6 }}>
         {/* هدر */}
         <Box id="resume" textAlign="center" mb={6}>
-          <Typography variant={isMobile ? "h4" : "h3"} fontWeight="bold" gutterBottom>
+          <Typography
+            variant={isMobile ? "h4" : "h3"}
+            fontWeight="bold"
+            gutterBottom
+          >
             رزومه مرتضی محمودی
           </Typography>
           <Typography variant="h6" color="text.secondary">
-            توسعه‌دهنده فول‌استک وب | متخصص React و NestJS و Next و PostgreSQL و MongoDB | کارشناس شبکه
+            توسعه‌دهنده فول‌استک وب | متخصص React و NestJS و Next و PostgreSQL و
+            MongoDB | کارشناس شبکه
           </Typography>
         </Box>
 
@@ -201,9 +252,10 @@ export default function ResumePage() {
           <Stack spacing={2}>
             {skills.map((skill, i) => (
               <Box key={i}>
-                <Typography variant="body1" mb={0.5}>
-                  {skill.name}
-                </Typography>
+                <Box display="flex" alignItems="center" mb={0.5} gap={1}>
+                  {skill.icon}
+                  <Typography variant="body1">{skill.name}</Typography>
+                </Box>
                 <ColoredLinearProgress value={skill.level} />
               </Box>
             ))}
@@ -221,9 +273,10 @@ export default function ResumePage() {
           <Stack spacing={2}>
             {languages.map((lang, i) => (
               <Box key={i}>
-                <Typography variant="body1" mb={0.5}>
-                  {lang.name}
-                </Typography>
+                <Box display="flex" alignItems="center" mb={0.5} gap={1}>
+                  {lang.icon}
+                  <Typography variant="body1">{lang.name}</Typography>
+                </Box>
                 <ColoredLinearProgress value={lang.level} />
               </Box>
             ))}
