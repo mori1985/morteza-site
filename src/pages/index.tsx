@@ -11,7 +11,6 @@ import {
 import "@fontsource/vazirmatn";
 import Image from "next/image";
 
-
 // کامپوننت‌ها
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -21,7 +20,6 @@ import Resume from "@/components/Resume";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { Divider } from "@mui/material";
-
 
 // تم سفارشی
 const theme = createTheme({
@@ -62,17 +60,17 @@ export default function Home() {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="مرتضی محمودی | برنامه‌نویس فول‌استک وب" />
         <meta property="og:description" content="نمونه‌کارها، رزومه و مهارت‌های مرتضی محمودی در حوزه توسعه وب با React و NestJS" />
-        <meta property="og:url" content="https://mortezamahmoudi.dev" />
-        <meta property="og:image" content="https://mortezamahmoudi.dev/images/banner.png" />
+        <meta property="og:url" content="https://morteza-mahmoudi-dev.ilarta.ir" />
+        <meta property="og:image" content="https://morteza-mahmoudi-dev.ilarta.ir/images/banner.png" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="مرتضی محمودی | توسعه‌دهنده فول‌استک وب" />
         <meta name="twitter:description" content="رزومه و پروژه‌های برنامه‌نویسی React، NestJS، PostgreSQL و بیشتر." />
-        <meta name="twitter:image" content="https://mortezamahmoudi.dev/images/banner.png" />
+        <meta name="twitter:image" content="https://morteza-mahmoudi-dev.ilarta.ir/images/banner.png" />
 
         {/* Canonical */}
-        <link rel="canonical" href="https://mortezamahmoudi.dev" />
+        <link rel="canonical" href="https://morteza-mahmoudi-dev.ilarta.ir" />
 
         {/* Structured Data */}
         <script
@@ -83,8 +81,8 @@ export default function Home() {
               "@type": "Person",
               name: "مرتضی محمودی",
               jobTitle: "Full Stack Web Developer",
-              url: "https://mortezamahmoudi.dev",
-              image: "https://mortezamahmoudi.dev/images/banner.png",
+              url: "https://morteza-mahmoudi-dev.ilarta.ir",
+              image: "https://morteza-mahmoudi-dev.ilarta.ir/images/banner.png",
               sameAs: [
                 "https://www.linkedin.com/in/morteza-mahmoudi-39899015a/",
               ],
