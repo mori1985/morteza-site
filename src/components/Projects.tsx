@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Box,
   Typography,
@@ -12,7 +10,6 @@ import {
 } from "@mui/material";
 import CodeIcon from "@mui/icons-material/Code";
 import LaunchIcon from "@mui/icons-material/Launch";
-import { motion } from "framer-motion";
 
 const projects = [
   {
@@ -20,67 +17,113 @@ const projects = [
     description:
       "سامانه ثبت و مدیریت اطلاعات ۳۰هزار مسافر اربعین، شامل فرم رزرو، تخصیص اتوبوس، و ارسال پیامک.",
     technologies: ["React", "NestJS", "PostgreSQL", "Prisma", "Tailwind"],
-    demo: "http://qazvin-rah-mosafer.ir",
+    demo: null,
   },
   {
     title: "دفترچه تلفن سازمانی",
     description:
-      "اپلیکیشن مدیریت مخاطبین با امکان جستجو، فیلتر و دسته‌بندی، طراحی شده برای استفاده داخلی سازمان‌ها.",
+      "اپلیکیشن مدیریت مخاطبین با امکان جستجو، فیلتر و دسته‌بندی، برای استفاده داخلی سازمان‌ها.",
     technologies: ["React", "JSON Server", "Material UI"],
-    demo: "https://qazvin-rah-phbook.ilarta.ir",
+    demo: null,
   },
   {
     title: "نسخه فعلی سایت شخصی",
     description:
-      "وب‌سایت شخصی طراحی‌شده با Next.js و Material UI برای نمایش رزومه و نمونه‌کارها.",
-    technologies: ["Next.js", "Material UI", "TypeScript", "Vazirmatn"],
-    demo: "http://localhost:3000",
+      "وب‌سایت شخصی با Next.js و Material UI برای نمایش رزومه و نمونه‌کارها.",
+    technologies: [
+      "Next.js",
+      "Google Search Console",
+      "robots.txt",
+      "SEO Tools",
+      "Material UI",
+      "TypeScript",
+      "Vazirmatn",
+    ],
+    demo: null,
   },
   {
-    title: "نسخه قدیمی سایت شخصی",
+    title: "وب‌سایت شخصی سفارشی",
     description:
-      "اولین نسخه از وب‌سایت شخصی با طراحی ساده و استفاده از React و Material UI.",
-    technologies: ["React", "Material UI", "React Router"],
-    demo: "https://morteza-mahmoudi.ilarta.ir/",
+      "طراحی و توسعه وب‌سایت شخصی با UI/UX مدرن و ریسپانسیو برای مشتریان.",
+    technologies: ["React", "Next.js", "Tailwind CSS", "Framer Motion"],
+    demo: null,
+  },
+  {
+    title: "بهینه‌سازی SEO سایت",
+    description:
+      "بهینه‌سازی موتور جستجو با تنظیمات متا تگ‌ها، Sitemap، و ریدایرکت‌ها.",
+    technologies: ["Next.js", "Google Search Console", "robots.txt", "SEO Tools"],
+    demo: null,
+  },
+  {
+    title: "کانفیگ سرورهای ابری",
+    description:
+      "پیکربندی سرورهای ابری برای میزبانی پروژه‌ها با Nginx و Docker.",
+    technologies: ["Nginx", "Docker", "AWS", "DigitalOcean"],
+    demo: null,
+  },
+  {
+    title: "دیتابیس‌های PostgreSQL و MongoDB",
+    description:
+      "طراحی و مدیریت دیتابیس‌ها با مهاجرت داده و بهینه‌سازی کوئری‌ها.",
+    technologies: ["PostgreSQL", "MongoDB", "Prisma", "Node.js"],
+    demo: null,
+  },
+  {
+    title: "داشبورد React",
+    description:
+      "ساخت داشبورد تعاملی با چارت‌ها و فیلترهای زنده برای مانیتورینگ داده‌ها.",
+    technologies: ["React", "Chart.js", "Material UI", "Redux"],
+    demo: null,
+  },
+  {
+    title: "طراحی قالب سایت",
+    description:
+      "طراحی قالب‌های سفارشی و ریسپانسیو برای وب‌سایت‌های تجاری و شخصی.",
+    technologies: ["HTML", "CSS", "Tailwind CSS", "Figma"],
+    demo: null,
   },
 ];
 
-const techColorMap: Record<string, string> = {
-  React: "#61dafb",
-  NestJS: "#e0234e",
-  PostgreSQL: "#336791",
-  Prisma: "#0c344b",
-  Tailwind: "#38b2ac",
-  "Material UI": "#007fff",
-  "JSON Server": "#ff6347",
-  "Next.js": "#000000",
-  TypeScript: "#3178c6",
-  "React Router": "#ca4245",
-  Vazirmatn: "#5a5a5a",
+const techColorMap = {
+  React: "#00c4cc",
+  NestJS: "#ff4081",
+  PostgreSQL: "#42a5f5",
+  Prisma: "#26a69a",
+  Tailwind: "#4caf50",
+  "Material UI": "#2196f3",
+  "JSON Server": "#ff5722",
+  "Next.js": "#673ab7",
+  TypeScript: "#3f51b5",
+  Vazirmatn: "#9e9e9e",
+  "Google Search Console": "#0288d1",
+  "robots.txt": "#4dd0e1",
+  "SEO Tools": "#80deea",
+  Nginx: "#2ecc71",
+  Docker: "#3498db",
+  AWS: "#ffca28",
+  DigitalOcean: "#039be5",
+  "Chart.js": "#ef5350",
+  Redux: "#ab47bc",
+  HTML: "#f44336",
+  CSS: "#3f51b5",
+  Figma: "#1de9b6",
+  "MongoDB": "#2e7d32",
+  "Node.js": "#8bc34a",
 };
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-  }),
-};
-
 
 export default function Projects() {
   return (
-    <Box id="projects" sx={{ py: 8 }}>
+    <Box id="projects" sx={{ py: 6, backgroundColor: "#f5f5f5" }}>
       <Typography
         variant="h4"
         align="center"
         fontWeight="bold"
         gutterBottom
         sx={{
-          background: "linear-gradient(90deg, #0066cc, #00b0ff, #0066cc)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          userSelect: "none",
+          color: "#2e7d32",
+          textShadow: "1px 1px 3px rgba(0, 0, 0, 0.1)",
+          mb: 4,
         }}
       >
         پروژه‌ها
@@ -88,84 +131,72 @@ export default function Projects() {
 
       <Box
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
+          display: "grid",
+          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" },
           gap: 4,
-          mt: 4,
+          px: { xs: 2, md: 4 },
         }}
       >
         {projects.map((project, index) => (
-          <motion.div
+          <Card
             key={index}
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            custom={index}
+            elevation={4}
+            sx={{
+              backgroundColor: "#0b255eff",
+              color: "#2e7d32",
+              borderRadius: 2,
+              height: 360,
+              transition: "transform 0.3s ease",
+              "&:hover": {
+                transform: "scale(1.03)",
+                boxShadow: "0 6px 12px rgba(0, 0, 0, 0.15)",
+              },
+            }}
           >
-            <Card
-              elevation={8}
-              sx={{
-                width: { xs: 300, sm: 360 },
-                height: 340,
-                backgroundColor: "#151dcf",
-                color: "#fff",
-                transition: "transform 0.3s ease",
-                "&:hover": { transform: "translateY(-5px)" },
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-              }}
-            >
-              <CardContent>
-                <Typography variant="h6" fontWeight="bold" gutterBottom>
-                  {project.title}
-                </Typography>
-                <Typography variant="body2" sx={{ mb: 2 }}>
-                  {project.description}
-                </Typography>
-
-                <Stack direction="row" spacing={1} flexWrap="wrap">
-                  {project.technologies.map((tech, i) => (
-                    <Chip
-                      key={i}
-                      label={tech}
-                      icon={<CodeIcon />}
-                      size="small"
-                      sx={{
-                        backgroundColor: techColorMap[tech] || "#ccc",
-                        color: "#fff",
-                        fontWeight: "bold",
-                      }}
-                    />
-                  ))}
-                </Stack>
-              </CardContent>
-
-              <CardActions
-                sx={{ px: 2, pb: 2, justifyContent: "space-between" }}
-              >
-              
+            <CardContent sx={{ p: 2, flexGrow: 1 }}>
+              <Typography variant="h6" fontWeight="bold" gutterBottom>
+                {project.title}
+              </Typography>
+              <Typography variant="body2" sx={{ mb: 2, color: "#757575" }}>
+                {project.description}
+              </Typography>
+              <Stack direction="row" spacing={1} flexWrap="wrap" sx={{ mb: 1 }}>
+                {project.technologies.map((tech, i) => (
+                  <Chip
+                    key={i}
+                    label={tech}
+                    icon={<CodeIcon />}
+                    size="small"
+                    sx={{
+                      backgroundColor: techColorMap[tech] || "#e0e0e0ff",
+                      color: "#596d88ff",
+                      fontWeight: "bold",
+                      "& .MuiChip-icon": { color: "#97cc66ff" },
+                      mb: 0.5,
+                    }}
+                  />
+                ))}
+              </Stack>
+            </CardContent>
+            <CardActions sx={{ p: 2, justifyContent: "flex-end" }}>
+              {project.demo && (
                 <Button
                   size="small"
                   href={project.demo}
                   target="_blank"
                   variant="contained"
                   sx={{
-                    backgroundColor: "#fff",
-                    color: "#151dcf",
-                    "&:hover": {
-                      backgroundColor: "#e0f7fa",
-                    },
+                    backgroundColor: "#2e7d32",
+                    color: "#ffffff",
+                    "&:hover": { backgroundColor: "#388e3c" },
                   }}
                   endIcon={<LaunchIcon />}
                 >
                   دمو
                 </Button>
-              </CardActions>
-            </Card>
-          </motion.div>
+              )}
+            </CardActions>
+          </Card>
         ))}
       </Box>
     </Box>
