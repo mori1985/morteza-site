@@ -104,6 +104,7 @@ export default function Home() {
 
       {/* ساختار صفحه اصلی */}
       <Box component="main">
+        <p>تست دیپلوی</p>
         <Box
           sx={{
             position: "sticky",
