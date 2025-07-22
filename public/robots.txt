@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://mortezamahmoudi.dev
+Host: https://morteza-mahmoudi-dev.ilarta.ir
 
 # Sitemaps
-Sitemap: https://mortezamahmoudi.dev/sitemap.xml
+Sitemap: https://morteza-mahmoudi-dev.ilarta.ir/sitemap.xml
