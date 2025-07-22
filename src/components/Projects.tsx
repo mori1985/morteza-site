@@ -85,7 +85,33 @@ const projects = [
   },
 ];
 
-const techColorMap = {
+const techColorMap: Record<
+  | "React"
+  | "NestJS"
+  | "PostgreSQL"
+  | "Prisma"
+  | "Tailwind"
+  | "Material UI"
+  | "JSON Server"
+  | "Next.js"
+  | "TypeScript"
+  | "Vazirmatn"
+  | "Google Search Console"
+  | "robots.txt"
+  | "SEO Tools"
+  | "Nginx"
+  | "Docker"
+  | "AWS"
+  | "DigitalOcean"
+  | "Chart.js"
+  | "Redux"
+  | "HTML"
+  | "CSS"
+  | "Figma"
+  | "MongoDB"
+  | "Node.js",
+  string
+> = {
   React: "#00c4cc",
   NestJS: "#ff4081",
   PostgreSQL: "#42a5f5",
@@ -168,7 +194,7 @@ export default function Projects() {
                     icon={<CodeIcon />}
                     size="small"
                     sx={{
-                      backgroundColor: techColorMap[tech] || "#e0e0e0ff",
+                      backgroundColor: techColorMap[tech as keyof typeof techColorMap] || "#e0e0e0ff",
                       color: "#596d88ff",
                       fontWeight: "bold",
                       "& .MuiChip-icon": { color: "#97cc66ff" },
