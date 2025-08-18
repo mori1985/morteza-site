@@ -13,7 +13,7 @@ import {
   createTheme,
   useMediaQuery,
 } from "@mui/material";
-
+import Head from "next/head";
 import WorkIcon from "@mui/icons-material/Work";
 import SchoolIcon from "@mui/icons-material/School";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -137,19 +137,7 @@ const languages = [
 ];
 
 const ColoredLinearProgress = ({ value }: { value: number }) => (
-  <LinearProgress
-    variant="determinate"
-    value={value}
-    sx={{
-      height: 10,
-      borderRadius: 5,
-      [`& .MuiLinearProgress-bar`]: {
-        borderRadius: 5,
-        backgroundColor:
-          value > 80 ? "#4caf50" : value > 60 ? "#ff9800" : "#f44336",
-      },
-    }}
-  />
+  <LinearProgress variant="determinate" value={value} sx={{ height: 10, borderRadius: 5, [`& .MuiLinearProgress-bar`]: { borderRadius: 5, backgroundColor: value > 80 ? "#4caf50" : value > 60 ? "#ff9800" : "#f44336" } }} />
 );
 
 export default function ResumePage() {
@@ -158,96 +146,58 @@ export default function ResumePage() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Head>
+        <title>رزومه مرتضی محمودی | توسعه‌دهنده فول‌استک</title>
+        <meta name="description" content="رزومه حرفه‌ای مرتضی محمودی با تجربه در React، NestJS، PostgreSQL، MongoDB و شبکه‌های سیسکو و میکروتیک" />
+        <meta name="keywords" content="رزومه, مرتضی محمودی, برنامه‌نویس, React, NestJS, PostgreSQL" />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="رزومه مرتضی محمودی" />
+        <meta property="og:description" content="تجربه کاری، تحصیلات و مهارت‌های مرتضی محمودی در توسعه وب و شبکه" />
+        <meta property="og:url" content="https://morteza-mahmoudi-dev.ilarta.ir/resume" />
+        <meta property="og:image" content="https://morteza-mahmoudi-dev.ilarta.ir/images/resume-banner.png" />
+      </Head>
       <Container maxWidth="md" sx={{ py: 6 }}>
-        {/* هدر */}
         <Box id="resume" textAlign="center" mb={6}>
-          <Typography
-            variant={isMobile ? "h4" : "h3"}
-            fontWeight="bold"
-            gutterBottom
-          >
+          <Typography variant={isMobile ? "h4" : "h3"} fontWeight="bold" gutterBottom>
             رزومه مرتضی محمودی
           </Typography>
           <Typography variant="h6" color="text.secondary">
-            توسعه‌دهنده فول‌استک وب | متخصص React و NestJS و Next و PostgreSQL و
-            MongoDB | کارشناس شبکه
+            توسعه‌دهنده فول‌استک وب | متخصص React، NestJS، PostgreSQL، MongoDB | کارشناس شبکه
           </Typography>
         </Box>
-
-        {/* تجربه کاری و تحصیلات با Flex */}
-        <Box
-          display="flex"
-          flexDirection={isMobile ? "column" : "row"}
-          gap={6}
-          flexWrap="wrap"
-        >
-          {/* تجربه کاری */}
+        <Box display="flex" flexDirection={isMobile ? "column" : "row"} gap={6} flexWrap="wrap">
           <Box flex={1} minWidth={isMobile ? "100%" : "48%"}>
             <Box display="flex" alignItems="center" mb={2}>
               <WorkIcon color="primary" fontSize="large" />
-              <Typography variant="h5" fontWeight="bold" ml={1}>
-                تجربه کاری
-              </Typography>
+              <Typography variant="h5" fontWeight="bold" ml={1}>تجربه کاری</Typography>
             </Box>
-
             {workExperience.map((job, i) => (
-              <Box
-                key={i}
-                mb={3}
-                sx={{ backgroundColor: "#fff", p: 2, borderRadius: 2, boxShadow: 2 }}
-              >
-                <Typography variant="h6" fontWeight="600">
-                  {job.title}
-                </Typography>
-                <Typography variant="subtitle2" color="primary" fontWeight="600">
-                  {job.company} | {job.duration}
-                </Typography>
-                <Typography variant="body2" mt={1} color="text.secondary">
-                  {job.description}
-                </Typography>
+              <Box key={i} mb={3} sx={{ backgroundColor: "#fff", p: 2, borderRadius: 2, boxShadow: 2 }}>
+                <Typography variant="h6" fontWeight="600">{job.title}</Typography>
+                <Typography variant="subtitle2" color="primary" fontWeight="600">{job.company} | {job.duration}</Typography>
+                <Typography variant="body2" mt={1} color="text.secondary">{job.description}</Typography>
               </Box>
             ))}
           </Box>
-
-          {/* تحصیلات */}
           <Box flex={1} minWidth={isMobile ? "100%" : "48%"}>
             <Box display="flex" alignItems="center" mb={2}>
               <SchoolIcon color="secondary" fontSize="large" />
-              <Typography variant="h5" fontWeight="bold" ml={1}>
-                تحصیلات
-              </Typography>
+              <Typography variant="h5" fontWeight="bold" ml={1}>تحصیلات</Typography>
             </Box>
-
             {education.map((edu, i) => (
-              <Box
-                key={i}
-                mb={3}
-                sx={{ backgroundColor: "#fff", p: 2, borderRadius: 2, boxShadow: 2 }}
-              >
-                <Typography variant="h6" fontWeight="600">
-                  {edu.degree}
-                </Typography>
-                <Typography variant="subtitle2" color="secondary" fontWeight="600">
-                  {edu.university} | {edu.duration}
-                </Typography>
-                <Typography variant="body2" mt={1} color="text.secondary">
-                  {edu.description}
-                </Typography>
+              <Box key={i} mb={3} sx={{ backgroundColor: "#fff", p: 2, borderRadius: 2, boxShadow: 2 }}>
+                <Typography variant="h6" fontWeight="600">{edu.degree}</Typography>
+                <Typography variant="subtitle2" color="secondary" fontWeight="600">{edu.university} | {edu.duration}</Typography>
+                <Typography variant="body2" mt={1} color="text.secondary">{edu.description}</Typography>
               </Box>
             ))}
           </Box>
         </Box>
-
-        {/* تفکیک‌بخش‌ها */}
         <Divider sx={{ my: 5 }} />
-
-        {/* مهارت‌ها */}
         <Box mb={5}>
           <Box display="flex" alignItems="center" mb={2}>
             <CodeIcon color="primary" fontSize="large" />
-            <Typography variant="h5" fontWeight="bold" ml={1}>
-              مهارت‌ها
-            </Typography>
+            <Typography variant="h5" fontWeight="bold" ml={1}>مهارت‌ها</Typography>
           </Box>
           <Stack spacing={2}>
             {skills.map((skill, i) => (
@@ -261,14 +211,10 @@ export default function ResumePage() {
             ))}
           </Stack>
         </Box>
-
-        {/* زبان‌ها */}
         <Box>
           <Box display="flex" alignItems="center" mb={2}>
             <LanguageIcon color="secondary" fontSize="large" />
-            <Typography variant="h5" fontWeight="bold" ml={1}>
-              زبان‌ها
-            </Typography>
+            <Typography variant="h5" fontWeight="bold" ml={1}>زبان‌ها</Typography>
           </Box>
           <Stack spacing={2}>
             {languages.map((lang, i) => (

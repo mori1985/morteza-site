@@ -1,3 +1,9 @@
+# *
 User-agent: *
 Allow: /
+
+# Host
+Host: https://morteza-mahmoudi-dev.ilarta.ir
+
+# Sitemaps
 Sitemap: https://morteza-mahmoudi-dev.ilarta.ir/sitemap.xml
