@@ -2,9 +2,8 @@ import Head from "next/head";
 import { useEffect } from "react";
 import { ThemeProvider, createTheme, CssBaseline, Box, useMediaQuery, Container } from "@mui/material";
 import "@fontsource/vazirmatn";
-import Image from "next/image";
 import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
+import Homep from "@/components/Home";
 import AboutMe from "@/components/AboutMe";
 import Projects from "@/components/Projects";
 import Resume from "@/components/Resume";
@@ -66,17 +65,7 @@ export default function Home() {
           <Navbar />
         </Box>
         <Box id="home" sx={{ py: 10, backgroundColor: "#fff", minHeight: isMobile ? "auto" : "100vh" }}>
-          <Container maxWidth="md" sx={{ textAlign: "center" }}>
-            <Image
-              src="/images/banner.png"
-              alt="مرتضی محمودی - توسعه‌دهنده وب"
-              width={800}
-              height={400}
-              style={{ borderRadius: "12px", boxShadow: "0 4px 12px rgba(0, 0, 0, 0.1)" }}
-              priority
-            />
-          </Container>
-          <Hero />
+          <Homep />
         </Box>
         <Divider sx={{ my: 6, borderColor: "#000", borderBottomWidth: "2px", width: "60%", mx: "auto", opacity: 0.2 }} />
         <Box sx={{ py: 10, backgroundColor: "#e3f2fd" }}><AboutMe /></Box>
